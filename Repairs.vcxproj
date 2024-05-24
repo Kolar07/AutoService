@@ -158,9 +158,11 @@
   <ItemGroup>
     <ClCompile Include="MainView.cpp" />
     <ClCompile Include="Notification.cpp" />
-    <ClCompile Include="Repairs.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Service.cpp" />
     <ClCompile Include="ServiceOil.cpp" />
+    <ClCompile Include="ServiceOther.cpp" />
+    <ClCompile Include="ServiceTiming.cpp" />
     <ClCompile Include="Vehicle.cpp" />
     <ClCompile Include="VehicleContainer.cpp" />
   </ItemGroup>
