@@ -1,0 +1,2 @@
+C:\Users\jakub\OneDrive\Pulpit\Programming\Repairs\x64\Debug\Repairs.exe
+C:\Users\jakub\OneDrive\Pulpit\Programming\AutoService\x64\Debug\AutoService.exe
