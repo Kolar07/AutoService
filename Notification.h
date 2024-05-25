@@ -4,12 +4,22 @@
 #include <iostream>
 #include <vector>
 #include <time.h>
+#include "Date.h"
 
 class Notification {
-	std::string type;
+private:
+	//std::string type;
 	std::string status;
-	time_t dueMileage;
-	time_t dueDate;
+	//time_t dueMileage;
+	Date dueDate;
+public:
+	Notification();
+	Notification(Date _dueDate);
+	std::string getType();
+	std::string getStatus();
+	//time_t getDueMileage();
+	Date getDueDate();
+	void setDueDate(Date _dueDate);
 };
 
 

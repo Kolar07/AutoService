@@ -5,6 +5,8 @@
 #include "ServiceOil.h"
 #include "ServiceTiming.h"
 #include "ServiceOther.h"
+#include "Date.h"
+#include "Notification.h"
 
 int main() {
 	//MainView window;
@@ -12,7 +14,7 @@ int main() {
 	
 	//Service a(Service::oil,15000);
 	//a.print();
-	std::vector<std::unique_ptr<Service>> services;
+	/*std::vector<std::unique_ptr<Service>> services;
 	services.push_back(std::make_unique<ServiceOil>(543453, "sad", "dasd", "frdfgfrs", "tgdfgth"));
 	services.push_back(std::make_unique<ServiceOil>(2045340, "sdfsfd", "dadfgsd", "frdfgfrs", "tdfggth"));
 	services.push_back(std::make_unique<ServiceOil>(20534350, "sgdfdfgad", "dafdgsd", "frfdfgrs", "tgdfgth"));
@@ -28,7 +30,9 @@ int main() {
 	
 	for (int i = 0; i < services.size();i++) {
 		services[i]->print();
-	}
+	}*/
+	
+
 }
 
 //views are gonna inherit after mainview

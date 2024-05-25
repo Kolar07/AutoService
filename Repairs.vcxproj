@@ -156,6 +156,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Date.cpp" />
     <ClCompile Include="MainView.cpp" />
     <ClCompile Include="Notification.cpp" />
     <ClCompile Include="main.cpp" />
@@ -167,6 +168,7 @@
     <ClCompile Include="VehicleContainer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Date.h" />
     <ClInclude Include="MainView.h" />
     <ClInclude Include="Notification.h" />
     <ClInclude Include="NotificationVisualisation.h" />

@@ -2,9 +2,10 @@
 
 int Service::counter=0;
 
-Service::Service(/*Type type_,*/ int mileage_):/*type(type_),*/ mileage(mileage_) {
+Service::Service(/*Type type_,*/ int _mileage, int _day, int _month, int _year):/*type(type_),*/ mileage(_mileage) {
 	++counter;
 	id = counter;
+	dueDate = Date(_day, _month, _year);
 }
 
 Service::Service() {
@@ -32,8 +33,12 @@ int Service::getMileage() {
 	return mileage;
 }
 
-time_t Service::getDate() {
+Date Service::getDate() {
 	return date;
+}
+
+Date Service::getDueDate() {
+	return dueDate;
 }
 
 //std::string Service::getType() {
