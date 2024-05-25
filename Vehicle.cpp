@@ -8,6 +8,32 @@ Vehicle::Vehicle(std::string _mark, std::string _model, int _year, std::string _
 	std::cout << "Vehicle argument constructor called" << std::endl;
 }
 
+bool Vehicle::operator==(const Vehicle& obj) const {
+	return this->vin == obj.vin;
+}
+
+Vehicle &Vehicle::operator=( Vehicle& obj) {
+	if (this == &obj) {
+		return *this;
+	}
+	else {
+		mark = obj.mark;
+		model = obj.model;
+		year = obj.year;
+		version = obj.version;
+		engine = obj.engine;
+		vin = obj.vin;
+		intervalOil_km = obj.intervalOil_km;
+		intervalTiming_km = obj.intervalTiming_km;
+		intervalOil = obj.intervalOil;
+		intervalTiming = obj.intervalTiming;
+		intervalOther = obj.intervalOther;
+		services = std::move(obj.services);
+		notifications = std::move(obj.notifications); 
+		//add future intervals when done
+		return *this;
+	}
+}
 
 std::string Vehicle::get_model() {
 	return model;
@@ -54,6 +80,6 @@ void Vehicle::set_vin(std::string& _vin) {
 	vin = _vin;
 }
 
-void Vehicle::addService(Service *service)  {
-	services.push_back(service);
+void Vehicle::addService(std::unique_ptr<Service> service)  {
+	services.push_back(std::move(service));
 }

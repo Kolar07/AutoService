@@ -7,6 +7,9 @@
 #include "ServiceOther.h"
 #include "Date.h"
 #include "Notification.h"
+#include "NotificationOil.h"
+#include "NotificationOther.h"
+#include "NotificationTiming.h"
 
 int main() {
 	//MainView window;
@@ -32,6 +35,14 @@ int main() {
 		services[i]->print();
 	}*/
 	
+	std::vector<std::unique_ptr<Service>> services;
+	services.push_back(std::make_unique<ServiceOil>(543453,10,10,2020, "sad", "dasd", "frdfgfrs", "tgdfgth"));
+	//Notification test("green", services[0]->getDueDate());
+	//test.print();
+	std::vector<std::unique_ptr<Notification>> notifications;
+	notifications.push_back(std::make_unique<NotificationOil>("green", services[0]->getDueDate()));
+	services[0]->print();
+	notifications[0]->print();
 
 }
 

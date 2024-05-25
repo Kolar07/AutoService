@@ -22,7 +22,7 @@ public:
 		finding,
 		other
 	};*/
-	std::ostream& operator<<(const std::ostream& os);
+	//std::ostream& operator<<(const std::ostream& os);
 	Service(/*Type type_,*/ int _mileage, int _day, int _month, int _year);
 	Service();
 	~Service();
