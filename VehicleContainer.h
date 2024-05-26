@@ -9,7 +9,7 @@ class VehicleContainer {
 private:
 	std::vector<Vehicle> vehicles;
 public:
-	//void addVehicle(Vehicle& _vehicle);
+	void addVehicle(Vehicle &_vehicle);
 	//void removeVehicle(std::string _vin);
 };
 

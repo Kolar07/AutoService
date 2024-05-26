@@ -14,12 +14,14 @@ private:
 public:
 	Notification();
 	Notification(std::string _status,Date _dueDate);
+
 	std::string getType();
 	std::string getStatus();
 	//time_t getDueMileage();
 	Date getDueDate();
 	void setDueDate(Date _dueDate);
 	virtual void print() =0;
+	virtual std::unique_ptr<Notification> clone() const = 0;
 };
 
 

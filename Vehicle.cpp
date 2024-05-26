@@ -8,11 +8,61 @@ Vehicle::Vehicle(std::string _mark, std::string _model, int _year, std::string _
 	std::cout << "Vehicle argument constructor called" << std::endl;
 }
 
+Vehicle::Vehicle(const Vehicle& other):mark(other.mark), model(other.model), year(other.year), version(other.version), engine(other.engine),vin(other.vin), intervalOil_km(other.intervalOil_km), intervalTiming_km(other.intervalTiming_km),intervalOil(other.intervalOil), intervalTiming(other.intervalTiming), intervalOtherMap(other.intervalOtherMap) {
+
+	services.reserve(other.services.size());
+	for (const auto& service : other.services) {
+		services.push_back(service->clone());
+	}
+
+	notifications.clear();
+	notifications.reserve(other.notifications.size());
+	for (const auto& notification : other.notifications) {
+		notifications.push_back(notification->clone());
+	}
+}
+
+Vehicle::Vehicle(Vehicle&& other) noexcept :mark(std::move(other.mark)), model(std::move(other.model)), year(other.year),
+version(std::move(other.version)), engine(std::move(other.engine)), vin(std::move(other.vin)),
+intervalOil_km(other.intervalOil_km), intervalTiming_km(other.intervalTiming_km),
+intervalOil(std::move(other.intervalOil)), intervalTiming(std::move(other.intervalTiming)),
+intervalOtherMap(std::move(other.intervalOtherMap)), services(std::move(other.services)),
+notifications(std::move(other.notifications)) {
+
+	other.year = 0;
+	other.intervalOil_km = 0;
+	other.intervalTiming_km = 0;
+
+}
+
+Vehicle& Vehicle::operator=(Vehicle&& other) noexcept {
+	if (this == &other) {
+		return *this;
+	}
+	else {
+		mark = std::move(other.mark);
+		model = std::move(other.model);
+		year = other.year;
+		version = std::move(other.version);
+		engine = std::move(other.engine);
+		vin = std::move(other.vin);
+		intervalOil_km = other.intervalOil_km;
+		intervalTiming_km = other.intervalTiming_km;
+		intervalOil = std::move(other.intervalOil);
+		intervalTiming = std::move(other.intervalTiming);
+		intervalOtherMap = std::move(other.intervalOtherMap);
+
+		other.year = 0;
+		other.intervalOil_km = 0;
+		other.intervalTiming_km = 0;
+	}
+}
+
 bool Vehicle::operator==(const Vehicle& obj) const {
 	return this->vin == obj.vin;
 }
 
-Vehicle &Vehicle::operator=( Vehicle& obj) {
+Vehicle &Vehicle::operator=(const Vehicle& obj) {
 	if (this == &obj) {
 		return *this;
 	}
@@ -27,9 +77,20 @@ Vehicle &Vehicle::operator=( Vehicle& obj) {
 		intervalTiming_km = obj.intervalTiming_km;
 		intervalOil = obj.intervalOil;
 		intervalTiming = obj.intervalTiming;
-		intervalOther = obj.intervalOther;
-		services = std::move(obj.services);
-		notifications = std::move(obj.notifications); 
+		intervalOtherMap = obj.intervalOtherMap;
+		//services = std::move(obj.services);
+		//notifications = std::move(obj.notifications); 
+		services.clear();
+		services.reserve(obj.services.size());
+		for (const auto& service : obj.services) {
+			services.push_back(service->clone());
+		}
+
+		notifications.clear();
+		notifications.reserve(obj.notifications.size());
+		for (const auto& notification : obj.notifications) {
+			notifications.push_back(notification->clone());
+		}
 		//add future intervals when done
 		return *this;
 	}
@@ -54,7 +115,7 @@ std::string Vehicle::get_engine() {
 	return engine;
 }
 
-std::string Vehicle::get_vin() {
+std::string Vehicle::get_vin() const {
 	return vin;
 }
 
@@ -80,6 +141,6 @@ void Vehicle::set_vin(std::string& _vin) {
 	vin = _vin;
 }
 
-void Vehicle::addService(std::unique_ptr<Service> service)  {
-	services.push_back(std::move(service));
-}
+//void Vehicle::addService(std::unique_ptr<Service> service)  {
+//	services.push_back(std::move(service));
+//}

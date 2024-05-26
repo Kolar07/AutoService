@@ -20,6 +20,7 @@ public:
 
 	std::string getType();
 	std::string getTiming();
+	virtual std::unique_ptr<Service> clone() const override;
 
 };
 

@@ -26,7 +26,7 @@ public:
 	std::string getOilFilter();
 	std::string getAirFilter();
 	std::string getCabinFilter();
-
+	virtual std::unique_ptr<Service> clone() const override;
 };
 
 

@@ -31,3 +31,7 @@ void ServiceOil::print() {
 	std::cout << "Date: ";
 	Service::getDate().display();
 }
+
+std::unique_ptr<Service> ServiceOil::clone() const {
+	return std::make_unique<ServiceOil>(*this);
+}

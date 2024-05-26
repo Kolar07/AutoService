@@ -16,3 +16,7 @@ std::string ServiceOther::getOther() {
 std::string ServiceOther::getType() {
 	return type;
 }
+
+std::unique_ptr<Service> ServiceOther::clone() const {
+	return std::make_unique<ServiceOther>(*this);
+}

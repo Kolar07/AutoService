@@ -8,6 +8,7 @@ Notification::Notification() {};
 
 Notification::Notification(std::string _status, Date _dueDate):status(_status), dueDate(_dueDate) {}
 
+
 std::string Notification::getStatus() {
 	return status;
 }
@@ -19,6 +20,8 @@ Date Notification::getDueDate() {
 void Notification::setDueDate(Date _dueDate) {
 	dueDate = _dueDate;
 }
+
+
 
 //void Notification::print() const {
 //	std::cout << "Notification status: " << status << ", next service: ";
