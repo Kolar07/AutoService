@@ -13,6 +13,10 @@ Service::Service() {
 	id = counter;
 }
 
+bool Service::operator==(const Service& obj) {
+	return id == obj.id;
+}
+
 int Service::getCounter() {
 	return counter;
 }

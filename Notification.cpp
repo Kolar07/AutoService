@@ -21,7 +21,9 @@ void Notification::setDueDate(Date _dueDate) {
 	dueDate = _dueDate;
 }
 
-
+bool Notification::operator==(const Notification& obj) const {
+	return getType() == obj.getType();
+}
 
 //void Notification::print() const {
 //	std::cout << "Notification status: " << status << ", next service: ";

@@ -4,12 +4,16 @@ NotificationOil::NotificationOil() {};
 
 NotificationOil::NotificationOil(std::string _status, Date _dueDate) :Notification(_status, _dueDate) {}
 
-std::string NotificationOil::getType() {
-	return type;
+bool NotificationOil::operator==(const NotificationOil& obj) {
+	return this->getType() == obj.getType();
+}
+
+std::string NotificationOil::getType() const {
+	return "Oil";
 }
 
  void NotificationOil::print() {
-	std::cout <<"Notification type: "<<type<< ", Notification status: " << getStatus() << ", next service: ";
+	std::cout <<"Notification type: "<<getType()<< ", Notification status: " << getStatus() << ", next service: ";
 	Notification::getDueDate().display();
 	}
 
