@@ -28,23 +28,27 @@ private:
 public:
 	Vehicle();
 	Vehicle(std::string _mark, std::string _model, int _year, std::string _version, std::string _engine, std::string _vin);
+	Vehicle(const Vehicle& other);
+	Vehicle(Vehicle&& other) noexcept;
+	Vehicle& operator=(Vehicle&& other) noexcept;
+	~Vehicle() = default;
 
 	bool operator==(const Vehicle &obj) const;
-	Vehicle &operator=( Vehicle& obj);
+	Vehicle &operator=(const Vehicle& obj);
 
 	std::string get_mark();
 	std::string get_model();
 	int get_year();
 	std::string get_version();
 	std::string get_engine();
-	std::string get_vin();
+	std::string get_vin() const;
 	void set_mark(std::string& _mark);
 	void set_model(std::string& _model);
 	void set_year(int & _year);
 	void set_version(std::string& _version);
 	void set_engine(std::string& _engine);
 	void set_vin(std::string& _vin);
-	void addService(std::unique_ptr<Service> service);
+	//void addService(std::unique_ptr<Service> service);
 };
 
 #endif

@@ -20,6 +20,7 @@ public:
 
 	std::string getType();
 	std::string getOther();
+	virtual std::unique_ptr<Service> clone() const override;
 
 };
 

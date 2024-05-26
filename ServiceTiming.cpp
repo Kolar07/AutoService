@@ -15,3 +15,7 @@ std::string ServiceTiming::getTiming() {
 std::string ServiceTiming::getType() {
 	return type;
 }
+
+std::unique_ptr<Service> ServiceTiming::clone() const {
+	return std::make_unique<ServiceTiming>(*this);
+}

@@ -34,6 +34,7 @@ public:
 	int getMileage();
 	int getID();
 	//std::string getType();
+	virtual std::unique_ptr<Service> clone() const = 0;
 
 	static int getCounter();
 

@@ -16,6 +16,7 @@ public:
 	NotificationTiming(std::string _status, Date _dueDate);
 	std::string getType();
 	virtual void print() override;
+	virtual std::unique_ptr<Notification> clone() const override;
 };
 
 

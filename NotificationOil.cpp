@@ -12,3 +12,7 @@ std::string NotificationOil::getType() {
 	std::cout <<"Notification type: "<<type<< ", Notification status: " << getStatus() << ", next service: ";
 	Notification::getDueDate().display();
 	}
+
+ std::unique_ptr<Notification> NotificationOil::clone() const {
+	 return std::make_unique<NotificationOil>(*this);
+ }

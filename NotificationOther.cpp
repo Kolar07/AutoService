@@ -12,3 +12,7 @@ void NotificationOther::print() {
 	std::cout << "Notification type: " << type << ", Notification status: " << getStatus() << ", next service: ";
 	Notification::getDueDate().display();
 }
+
+std::unique_ptr<Notification> NotificationOther::clone() const {
+	return std::make_unique<NotificationOther>(*this);
+}
