@@ -26,6 +26,8 @@ public:
 	Service(/*Type type_,*/ int _mileage, int _day, int _month, int _year);
 	Service();
 	~Service();
+	
+	bool operator==(const Service& obj);
 
 	virtual void print()=0;
 

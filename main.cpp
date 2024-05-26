@@ -10,40 +10,31 @@
 #include "NotificationOil.h"
 #include "NotificationOther.h"
 #include "NotificationTiming.h"
+#include "Vehicle.h"
+#include "VehicleContainer.h"
 
 int main() {
-	//MainView window;
-	//window.loop();
 	
-	//Service a(Service::oil,15000);
-	//a.print();
-	/*std::vector<std::unique_ptr<Service>> services;
-	services.push_back(std::make_unique<ServiceOil>(543453, "sad", "dasd", "frdfgfrs", "tgdfgth"));
-	services.push_back(std::make_unique<ServiceOil>(2045340, "sdfsfd", "dadfgsd", "frdfgfrs", "tdfggth"));
-	services.push_back(std::make_unique<ServiceOil>(20534350, "sgdfdfgad", "dafdgsd", "frfdfgrs", "tgdfgth"));
-	services.push_back(std::make_unique<ServiceOil>(245300, "sfdgdfgad", "dasd", "frfrdfgs", "tdfggth"));
-	services.push_back(std::make_unique<ServiceTiming>(354, "sdsfd"));
-	services.push_back(std::make_unique<ServiceTiming>(345, "sdhjkhjkf"));
-	services.push_back(std::make_unique<ServiceTiming>(453, "hkj"));
-	services.push_back(std::make_unique<ServiceTiming>(453, "sdhjkhjksfd"));
-	services.push_back(std::make_unique<ServiceOther>(5343, "sdhjkhjksfd"));
-	services.push_back(std::make_unique<ServiceOther>(543, "fre"));
-	services.push_back(std::make_unique<ServiceOther>(45343, "sdhjdfgdfdsrgkhjksfd"));
-	services.push_back(std::make_unique<ServiceOther>(53453, "fdg"));
+	/*VehicleContainer container;
+	Vehicle vehicle;
+	std::unique_ptr<Service> service = std::make_unique<ServiceOil>(543453, 10, 10, 2020, "sad", "dasd", "frdfgfrs", "tgdfgth");
+	std::unique_ptr<Notification> notification = std::make_unique<NotificationOil>();
+	vehicle.addService(std::move(service));
+	vehicle.addNotification(std::move(notification));
+	container.addVehicle(vehicle);
 	
-	for (int i = 0; i < services.size();i++) {
-		services[i]->print();
-	}*/
-	
-	std::vector<std::unique_ptr<Service>> services;
-	services.push_back(std::make_unique<ServiceOil>(543453,10,10,2020, "sad", "dasd", "frdfgfrs", "tgdfgth"));
-	//Notification test("green", services[0]->getDueDate());
-	//test.print();
-	std::vector<std::unique_ptr<Notification>> notifications;
-	notifications.push_back(std::make_unique<NotificationOil>("green", services[0]->getDueDate()));
-	services[0]->print();
-	notifications[0]->print();
+	return 0;*/
 
+	std::unique_ptr<Notification> notification1 = std::make_unique<NotificationOil>();
+	std::unique_ptr<Notification> notification2 = std::make_unique<NotificationTiming>();
+	std::unique_ptr<Notification> notification3 = std::make_unique<NotificationOil>();
+	std::unique_ptr<Notification> notification4 = std::make_unique<NotificationOther>();
+
+	std::cout << notification1->getType() << std::endl;
+	std::cout << notification3->getType() << std::endl;
+
+	if (*notification1 == *notification3) std::cout << "GITARA TRUE" << std::endl;
+	//if (*notification2 != *notification4) std::cout << "GITARA FALSE" << std::endl;
 }
 
 //views are gonna inherit after mainview

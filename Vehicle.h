@@ -48,7 +48,11 @@ public:
 	void set_version(std::string& _version);
 	void set_engine(std::string& _engine);
 	void set_vin(std::string& _vin);
-	//void addService(std::unique_ptr<Service> service);
+
+	void addService(std::unique_ptr<Service> service);
+	void addNotification(std::unique_ptr<Notification> notification);
+	void removeService(int _id);
+	void removeNotification(std::string _type);
 };
 
 #endif

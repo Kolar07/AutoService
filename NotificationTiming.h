@@ -9,12 +9,13 @@
 
 class NotificationTiming : public Notification {
 private:
-	std::string type = "Timing";
+	//std::string type = "Timing";
 
 public:
 	NotificationTiming();
 	NotificationTiming(std::string _status, Date _dueDate);
-	std::string getType();
+	bool operator==(const NotificationTiming& obj);
+	std::string getType() const override;
 	virtual void print() override;
 	virtual std::unique_ptr<Notification> clone() const override;
 };

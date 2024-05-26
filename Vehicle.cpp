@@ -141,6 +141,20 @@ void Vehicle::set_vin(std::string& _vin) {
 	vin = _vin;
 }
 
-//void Vehicle::addService(std::unique_ptr<Service> service)  {
-//	services.push_back(std::move(service));
-//}
+void Vehicle::addService(std::unique_ptr<Service> service)  {
+	services.push_back(std::move(service));
+}
+
+void Vehicle::addNotification(std::unique_ptr<Notification> notification) {
+	notifications.push_back(std::move(notification));
+}
+
+void Vehicle::removeNotification(std::string _type) {
+	auto it = std::find_if(notifications.begin(), notifications.end(), [_type](const std::unique_ptr<Notification>& notification) {
+		return notification->getType() == _type;
+		});
+
+	if (it != notifications.end()) {
+		notifications.erase(it);
+	}
+}

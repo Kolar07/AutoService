@@ -4,12 +4,16 @@ NotificationTiming::NotificationTiming() {};
 
 NotificationTiming::NotificationTiming(std::string _status, Date _dueDate) :Notification(_status, _dueDate) {}
 
-std::string NotificationTiming::getType() {
-	return type;
+bool NotificationTiming::operator==(const NotificationTiming& obj) {
+	return getType() == obj.getType();
+}
+
+std::string NotificationTiming::getType() const {
+	return "Timing";
 }
 
 void NotificationTiming::print() {
-	std::cout << "Notification type: " << type << ", Notification status: " << getStatus() << ", next service: ";
+	std::cout << "Notification type: " << getType() << ", Notification status: " << getStatus() << ", next service: ";
 	Notification::getDueDate().display();
 }
 

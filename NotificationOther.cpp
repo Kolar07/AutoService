@@ -4,12 +4,20 @@ NotificationOther::NotificationOther() {};
 
 NotificationOther::NotificationOther(std::string _status, Date _dueDate) :Notification(_status, _dueDate) {}
 
-std::string NotificationOther::getType() {
-	return type;
+bool NotificationOther::operator==(const NotificationOther& obj) {
+	return specifiedType == obj.specifiedType;
+}
+
+std::string NotificationOther::getType() const {
+	return "Other";
+}
+
+std::string NotificationOther::getSpecifiedType() {
+	return specifiedType;
 }
 
 void NotificationOther::print() {
-	std::cout << "Notification type: " << type << ", Notification status: " << getStatus() << ", next service: ";
+	std::cout << "Notification type: " << getType() << ", Notification status: " << getStatus() << ", next service: ";
 	Notification::getDueDate().display();
 }
 

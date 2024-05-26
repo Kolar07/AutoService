@@ -9,12 +9,15 @@
 
 class NotificationOther : public Notification {
 private:
-	std::string type = "Other";
+	//std::string type = "Other";
+	std::string specifiedType = "";
 
 public:
 	NotificationOther();
 	NotificationOther(std::string _status, Date _dueDate);
-	std::string getType();
+	bool operator==(const NotificationOther& obj);
+	std::string getType() const override;
+	std::string getSpecifiedType();
 	virtual void print() override;
 	virtual std::unique_ptr<Notification> clone() const override;
 };

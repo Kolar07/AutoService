@@ -9,15 +9,14 @@
 class Notification {
 private:
 	std::string status;
-	//time_t dueMileage;
 	Date dueDate;
 public:
 	Notification();
 	Notification(std::string _status,Date _dueDate);
+	virtual bool operator==(const Notification& other) const;
 
-	std::string getType();
+	virtual std::string getType() const = 0;
 	std::string getStatus();
-	//time_t getDueMileage();
 	Date getDueDate();
 	void setDueDate(Date _dueDate);
 	virtual void print() =0;

@@ -10,7 +10,7 @@ void ServiceOther::print() {
 }
 
 std::string ServiceOther::getOther() {
-	return other;
+	return service;
 }
 
 std::string ServiceOther::getType() {

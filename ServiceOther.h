@@ -10,10 +10,10 @@ class ServiceOther : public Service {
 
 private:
 	std::string type = "Other";
-	std::string other;
+	std::string service;
 
 public:
-	ServiceOther(int mileage_, std::string _other);
+	ServiceOther(int mileage_, std::string _service);
 	//std::ostream& operator<<(const std::ostream& os);
 
 	virtual void print() override;

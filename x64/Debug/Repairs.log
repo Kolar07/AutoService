@@ -1,15 +1,3 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Repairs.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Notification.cpp
   main.cpp
-  NotificationOil.cpp
-  NotificationOther.cpp
-  NotificationTiming.cpp
-  Service.cpp
-  ServiceOil.cpp
-  ServiceOther.cpp
-  ServiceTiming.cpp
-  Vehicle.cpp
-  VehicleContainer.cpp
-  Generating Code...
-C:\Users\jakub\OneDrive\Pulpit\Programming\AutoService\Vehicle.cpp(59): warning C4715: 'Vehicle::operator=': not all control paths return a value
   Repairs.vcxproj -> C:\Users\jakub\OneDrive\Pulpit\Programming\AutoService\x64\Debug\AutoService.exe
