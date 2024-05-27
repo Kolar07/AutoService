@@ -15,6 +15,13 @@ public:
 
 	bool operator==(const Interval& obj);
 	Interval& operator=(const Interval &obj);
+
+	int getDays() const;
+	int getMonths() const;
+	int getYears() const;
+	void setDays(int &_days);
+	void setMonths(int &_months);
+	void setYears(int &_years);
 };
 
 
