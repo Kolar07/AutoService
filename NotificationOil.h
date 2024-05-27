@@ -15,6 +15,7 @@ public:
 	NotificationOil();
 	NotificationOil(std::string _status, Date _dueDate);
 	bool operator==(const NotificationOil& obj);
+	bool operator!=(const NotificationOil& obj);
 
 	std::string getType() const override;
 	virtual void print() override;

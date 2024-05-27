@@ -8,6 +8,10 @@ bool NotificationTiming::operator==(const NotificationTiming& obj) {
 	return getType() == obj.getType();
 }
 
+bool NotificationTiming::operator!=(const NotificationTiming& obj) {
+	return getType() != obj.getType();
+}
+
 std::string NotificationTiming::getType() const {
 	return "Timing";
 }

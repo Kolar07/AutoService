@@ -13,7 +13,8 @@ private:
 	std::string service;
 
 public:
-	ServiceOther(int mileage_, std::string _service);
+	ServiceOther();
+	ServiceOther(int _mileage, int _day, int _month, int _year, std::string _service);
 	//std::ostream& operator<<(const std::ostream& os);
 
 	virtual void print() override;

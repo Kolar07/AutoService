@@ -8,6 +8,10 @@ bool NotificationOther::operator==(const NotificationOther& obj) {
 	return specifiedType == obj.specifiedType;
 }
 
+bool NotificationOther::operator!=(const NotificationOther& obj) {
+	return specifiedType != obj.specifiedType;
+}
+
 std::string NotificationOther::getType() const {
 	return "Other";
 }

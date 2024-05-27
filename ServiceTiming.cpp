@@ -1,6 +1,8 @@
 #include "ServiceTiming.h"
 
-//ServiceTiming::ServiceTiming(int mileage_, std::string _timing) :Service(mileage_),timing(_timing) {};
+ServiceTiming::ServiceTiming(int _mileage, int _day, int _month, int _year, std::string _timing) :Service(_mileage, _day,_month,_year),timing(_timing) {};
+
+ServiceTiming::ServiceTiming() {}
 
 void ServiceTiming::print() {
 	std::cout << "Service id: " << Service::getID() << ", Type: " << getType() << ", date: " /*<< Service::getDate()*/ << ", mileage to the next service : " << Service::getMileage() << std::endl;

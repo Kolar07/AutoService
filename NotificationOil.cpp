@@ -5,7 +5,11 @@ NotificationOil::NotificationOil() {};
 NotificationOil::NotificationOil(std::string _status, Date _dueDate) :Notification(_status, _dueDate) {}
 
 bool NotificationOil::operator==(const NotificationOil& obj) {
-	return this->getType() == obj.getType();
+	return getType() == obj.getType();
+}
+
+bool NotificationOil::operator!=(const NotificationOil& obj) {
+	return getType() != obj.getType();
 }
 
 std::string NotificationOil::getType() const {

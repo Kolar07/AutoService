@@ -13,7 +13,8 @@ private:
 	std::string timing;
 
 public:
-	ServiceTiming(int mileage_, std::string _timing);
+	ServiceTiming();
+	ServiceTiming(int _mileage, int _day, int _month, int _year, std::string _timing);
 	std::ostream& operator<<(const std::ostream& os);
 
 	virtual void print() override;

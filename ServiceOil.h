@@ -16,6 +16,7 @@ private:
 	std::string cabinFilter;
 
 public:
+	ServiceOil();
 	ServiceOil(int mileage_, int _day, int _month, int _year, std::string _oil, std::string _oilFilter, std::string _airFilter, std::string _cabinFilter);
 	//std::ostream& operator<<(const std::ostream& os);
 
