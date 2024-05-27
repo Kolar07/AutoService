@@ -55,6 +55,7 @@ Vehicle& Vehicle::operator=(Vehicle&& other) noexcept {
 		other.year = 0;
 		other.intervalOil_km = 0;
 		other.intervalTiming_km = 0;
+		return *this;
 	}
 }
 
@@ -156,5 +157,14 @@ void Vehicle::removeNotification(std::string _type) {
 
 	if (it != notifications.end()) {
 		notifications.erase(it);
+	}
+}
+
+void Vehicle::removeService(int _id) {
+	auto it = std::find_if(services.begin(), services.end(), [&_id](const std::unique_ptr<Service>& service) {
+		return service->getID() == _id;
+		});
+	if (it != services.end()) {
+		services.erase(it);
 	}
 }

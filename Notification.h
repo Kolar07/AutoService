@@ -14,6 +14,7 @@ public:
 	Notification();
 	Notification(std::string _status,Date _dueDate);
 	virtual bool operator==(const Notification& other) const;
+	virtual bool operator!=(const Notification& other) const;
 
 	virtual std::string getType() const = 0;
 	std::string getStatus();

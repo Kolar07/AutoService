@@ -1,6 +1,8 @@
 #include "ServiceOther.h"
 
-//ServiceOther::ServiceOther(int mileage_, std::string _other) :Service(mileage_), other(_other) {};
+ServiceOther::ServiceOther(int _mileage, int _day, int _month, int _year, std::string _service) :Service(_mileage,_day,_month,_year), service(_service) {};
+
+ServiceOther::ServiceOther() {}
 
 void ServiceOther::print() {
 	std::cout << "Service id: " << Service::getID() << ", Type: " << getType() << ", mileage to the next service : " << Service::getMileage() << std::endl;

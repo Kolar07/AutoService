@@ -16,6 +16,7 @@ public:
 	NotificationOther();
 	NotificationOther(std::string _status, Date _dueDate);
 	bool operator==(const NotificationOther& obj);
+	bool operator!=(const NotificationOther& obj);
 	std::string getType() const override;
 	std::string getSpecifiedType();
 	virtual void print() override;

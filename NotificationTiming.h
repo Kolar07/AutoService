@@ -15,6 +15,7 @@ public:
 	NotificationTiming();
 	NotificationTiming(std::string _status, Date _dueDate);
 	bool operator==(const NotificationTiming& obj);
+	bool operator!=(const NotificationTiming& obj);
 	std::string getType() const override;
 	virtual void print() override;
 	virtual std::unique_ptr<Notification> clone() const override;

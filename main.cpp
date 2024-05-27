@@ -25,16 +25,26 @@ int main() {
 	
 	return 0;*/
 
-	std::unique_ptr<Notification> notification1 = std::make_unique<NotificationOil>();
-	std::unique_ptr<Notification> notification2 = std::make_unique<NotificationTiming>();
-	std::unique_ptr<Notification> notification3 = std::make_unique<NotificationOil>();
-	std::unique_ptr<Notification> notification4 = std::make_unique<NotificationOther>();
+	Vehicle vehicle;
+	Date date1(10,10,2020);
+	Date date2(12, 12, 2023);
+	std::unique_ptr<Notification> notification1 = std::make_unique<NotificationOil>("green",date1);
+	std::unique_ptr<Notification> notification2 = std::make_unique<NotificationTiming>("red",date2);
+	
+	std::unique_ptr<Service> service1 = std::make_unique<ServiceTiming>(15616, 20,0,0,"cdsc");
+	std::unique_ptr<Service> service2 = std::make_unique<ServiceOil>(1561,0,5,0,"sdczdc","cdvzvd","dsfsdf","fdescd");
 
-	std::cout << notification1->getType() << std::endl;
-	std::cout << notification3->getType() << std::endl;
+	vehicle.addNotification(std::move(notification1));
+	vehicle.addNotification(std::move(notification2));
+	vehicle.addService(std::move(service1));
+	vehicle.addService(std::move(service2));
 
-	if (*notification1 == *notification3) std::cout << "GITARA TRUE" << std::endl;
-	//if (*notification2 != *notification4) std::cout << "GITARA FALSE" << std::endl;
+	vehicle.removeNotification("Oil");
+	vehicle.removeNotification("Timing");
+	vehicle.removeService(1);
+	vehicle.removeService(2);
+
+
 }
 
 //views are gonna inherit after mainview
