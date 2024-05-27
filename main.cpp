@@ -25,7 +25,7 @@ int main() {
 	
 	return 0;*/
 
-	Vehicle vehicle;
+	Vehicle vehicle("asdasd","asdasd",2001,"sdad","asdad","VIN");
 	Date date1(10,10,2020);
 	Date date2(12, 12, 2023);
 	std::unique_ptr<Notification> notification1 = std::make_unique<NotificationOil>("green",date1);
@@ -34,15 +34,22 @@ int main() {
 	std::unique_ptr<Service> service1 = std::make_unique<ServiceTiming>(15616, 20,0,0,"cdsc");
 	std::unique_ptr<Service> service2 = std::make_unique<ServiceOil>(1561,0,5,0,"sdczdc","cdvzvd","dsfsdf","fdescd");
 
+	VehicleContainer container;
+
 	vehicle.addNotification(std::move(notification1));
 	vehicle.addNotification(std::move(notification2));
 	vehicle.addService(std::move(service1));
 	vehicle.addService(std::move(service2));
 
-	vehicle.removeNotification("Oil");
-	vehicle.removeNotification("Timing");
-	vehicle.removeService(1);
-	vehicle.removeService(2);
+	container.addVehicle(vehicle);
+	container.findVehicleByVin("VIN");
+	container.removeVehicle("VIN");
+	//vehicle.removeNotification("Oil");
+	//vehicle.removeNotification("Timing");
+	//vehicle.removeService(1);
+	//vehicle.removeService(2);
+
+
 
 
 }

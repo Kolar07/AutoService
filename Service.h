@@ -11,17 +11,11 @@ private:
 
 	static int counter;
 	int id;
-	//Type type;
 	Date date;
 	Date dueDate;
 	int mileage;
 
 public:
-	/*enum Type {
-		oil,
-		finding,
-		other
-	};*/
 	//std::ostream& operator<<(const std::ostream& os);
 	Service(/*Type type_,*/ int _mileage, int _day, int _month, int _year);
 	Service();

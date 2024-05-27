@@ -12,3 +12,10 @@ void VehicleContainer::removeVehicle(std::string _vin) {
 		vehicles.erase(it);
 	}
 }
+
+Vehicle* VehicleContainer::findVehicleByVin(const std::string& _vin) {
+	auto it = std::find_if(vehicles.begin(), vehicles.end(), [&_vin](const Vehicle &vehicle) {
+		return vehicle.get_vin() == _vin;
+		});
+	return it != vehicles.end() ? &(*it) : nullptr;
+}
