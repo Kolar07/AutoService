@@ -14,7 +14,7 @@ private:
 
 public:
 	NotificationOther();
-	NotificationOther(std::string _status, Date _dueDate);
+	NotificationOther(/*std::string _status*/Date date, Date _dueDate);
 	bool operator==(const NotificationOther& obj);
 	bool operator!=(const NotificationOther& obj);
 	std::string getType() const override;

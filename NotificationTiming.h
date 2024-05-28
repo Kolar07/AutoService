@@ -13,7 +13,7 @@ private:
 
 public:
 	NotificationTiming();
-	NotificationTiming(std::string _status, Date _dueDate);
+	NotificationTiming(/*std::string _status*/Date date, Date _dueDate);
 	bool operator==(const NotificationTiming& obj);
 	bool operator!=(const NotificationTiming& obj);
 	std::string getType() const override;

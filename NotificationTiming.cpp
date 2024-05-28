@@ -2,7 +2,8 @@
 
 NotificationTiming::NotificationTiming() {};
 
-NotificationTiming::NotificationTiming(std::string _status, Date _dueDate) :Notification(_status, _dueDate) {}
+NotificationTiming::NotificationTiming(Date _date, Date _dueDate) :Notification(_date, _dueDate) {}
+
 
 bool NotificationTiming::operator==(const NotificationTiming& obj) {
 	return getType() == obj.getType();

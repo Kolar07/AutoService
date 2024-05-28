@@ -23,6 +23,8 @@ std::string ServiceOil::getType() {
 
 ServiceOil::ServiceOil(int mileage_, int _day, int _month, int _year, std::string _oil, std::string _oilFilter, std::string _airFilter, std::string _cabinFilter) :Service(mileage_, _day, _month, _year), oil(_oil), oilFilter(_oilFilter), airFilter(_airFilter), cabinFilter(_cabinFilter) {};
 
+ServiceOil::ServiceOil(int _mileage, int _dayOfService, int _monthOfService, int _yearOfService, int _daysToNextService, int _monthsToNextService, int _yearsToNextService, std::string _oil, std::string _oilFilter, std::string _airFilter, std::string _cabinFilter) : Service(_mileage, _dayOfService, _monthOfService, _yearOfService, _daysToNextService, _monthsToNextService, _yearsToNextService), oil(_oil), oilFilter(_oilFilter), airFilter(_airFilter), cabinFilter(_cabinFilter) {}
+
 ServiceOil::ServiceOil() {}
 
 void ServiceOil::print() {

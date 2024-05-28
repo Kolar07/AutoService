@@ -2,7 +2,7 @@
 
 NotificationOther::NotificationOther() {};
 
-NotificationOther::NotificationOther(std::string _status, Date _dueDate) :Notification(_status, _dueDate) {}
+NotificationOther::NotificationOther(Date _date, Date _dueDate) :Notification(_date, _dueDate) {}
 
 bool NotificationOther::operator==(const NotificationOther& obj) {
 	return specifiedType == obj.specifiedType;

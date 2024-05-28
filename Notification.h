@@ -9,10 +9,11 @@
 class Notification {
 private:
 	std::string status;
+	Date date;
 	Date dueDate;
 public:
 	Notification();
-	Notification(std::string _status,Date _dueDate);
+	Notification(/*std::string _status*/Date _date,Date _dueDate);
 	virtual bool operator==(const Notification& other) const;
 	virtual bool operator!=(const Notification& other) const;
 
