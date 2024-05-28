@@ -14,6 +14,7 @@ Interval& Interval::operator=(const Interval& obj) {
 		this->days = obj.days;
 		this->months = obj.months;
 		this->years = obj.years;
+		return *this;
 	}
 }
 

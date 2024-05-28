@@ -23,7 +23,6 @@ public:
 
 	std::string getType();
 	std::string getOther();
-	
 
 };
 

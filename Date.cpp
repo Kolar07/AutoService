@@ -4,6 +4,22 @@ Date::Date() {}
 
 Date::Date(int _day, int _month, int _year) :day{ _day }, month{ _month }, year{ _year } {}
 
+Date& Date::operator=(const Date& other) {
+	if (this == &other) {
+		return *this;
+	}
+	else {
+		this->day = other.day;
+		this->month = other.month;
+		this->year = other.year;
+		return *this;
+	}
+}
+
+bool Date::operator==(const Date& rhs) {
+	return day == rhs.day && month == rhs.month && year == rhs.year;
+}
+
 int Date::getDay() const {
 	return day;
 }
@@ -76,4 +92,11 @@ Date Date::addDays(int days) const {
 
 void Date::display() const {
 	std::cout << day << "/" << month << "/" << year << "." << std::endl;
+}
+
+int Date::daysBetween(const Date & other) {
+	time_t thisTime = this->toTimeT();
+	time_t otherTime = other.toTimeT();
+	double difference = difftime(otherTime, thisTime);
+	return static_cast<int>(difference/static_cast<double>(24*60*60));
 }
