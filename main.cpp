@@ -21,11 +21,13 @@ int main() {
 	//std::unique_ptr<Notification> notification1 = std::make_unique<NotificationOil>("green",date1);
 	//std::unique_ptr<Notification> notification2 = std::make_unique<NotificationTiming>("red",date2);
 	
-	std::unique_ptr<Service> service1 = std::make_unique<ServiceTiming>(15616, 10,10,2020,10,10,2021,"cdsc");
-	std::unique_ptr<Service> service2 = std::make_unique<ServiceOil>(1561,10,10,2020, 10, 10, 2021,"sdczdc","cdvzvd","dsfsdf","fdescd");
+	std::unique_ptr<Service> service1 = std::make_unique<ServiceTiming>(15616, 10,10,2020,0,1,0,"cdsc");
+	std::unique_ptr<Service> service2 = std::make_unique<ServiceOil>(1561,10,10,2020, 0, 0, 0,"sdczdc","cdvzvd","dsfsdf","fdescd");
 
 	std::unique_ptr<Notification> notification3 = std::make_unique<NotificationTiming>(service1->getDate(), service1->getDueDate());
 	std::unique_ptr<Notification> notification4 = std::make_unique<NotificationOil>(service2->getDate(), service2->getDueDate());
+
+
 
 	VehicleContainer container;
 

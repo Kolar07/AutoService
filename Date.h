@@ -11,6 +11,10 @@ private:
 public:
 	Date();
 	Date(int _day, int _month, int _year);
+	Date& operator=(const Date& other);
+
+	bool operator==(const Date& rhs);
+
 	int getDay() const;
 	int getMonth() const;
 	int getYear() const;
@@ -23,6 +27,7 @@ public:
 	Date addYears(int _years) const;
 	Date addMonths(int _months) const;
 	Date addDays(int _days) const;
+	int daysBetween(const Date &other);
 	void display() const;
 };
 
