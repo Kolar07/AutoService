@@ -5,11 +5,13 @@
 #include <vector>
 #include <ostream>
 #include "Date.h"
+#include "Interval.h"
 
 class Service {
 private:
 
 	static int counter;
+
 	int id;
 	Date date;
 	Date dueDate;
@@ -17,7 +19,11 @@ private:
 
 public:
 	//std::ostream& operator<<(const std::ostream& os);
-	Service(/*Type type_,*/ int _mileage, int _day, int _month, int _year);
+	Service(int _mileage, int _dayOfService, int _monthOfService, int _yearOfService, int _daysToNextService, int _monthsToNextService, int _yearsToNextService);
+	//constructor with date of the service and time to next service (e.g. 6 months) 
+
+	Service(int _mileage, int _dayOfService, int _monthOfService, int _yearOfService);
+	// constructor with date of the service
 	Service();
 	~Service();
 	
@@ -29,7 +35,10 @@ public:
 	Date getDueDate();
 	int getMileage();
 	int getID();
-	//std::string getType();
+	void setDueDate(int _days, int _months, int _years);
+	void setDueDate(Date _date);
+	void setDueDateByInterval(Interval _interval);
+
 	virtual std::unique_ptr<Service> clone() const = 0;
 
 	static int getCounter();

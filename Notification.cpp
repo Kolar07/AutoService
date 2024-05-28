@@ -6,7 +6,7 @@
 
 Notification::Notification() {};
 
-Notification::Notification(std::string _status, Date _dueDate):status(_status), dueDate(_dueDate) {}
+Notification::Notification(Date _date, Date _dueDate):date(_date), dueDate(_dueDate) {}
 
 
 std::string Notification::getStatus() {

@@ -2,10 +2,17 @@
 
 int Service::counter=0;
 
-Service::Service(/*Type type_,*/ int _mileage, int _day, int _month, int _year):/*type(type_),*/ mileage(_mileage) {
+Service::Service(int _mileage, int _dayOfService, int _monthOfService, int _yearOfService): mileage(_mileage) {
 	++counter;
 	id = counter;
-	dueDate = Date(_day, _month, _year);
+	date = Date(_dayOfService, _monthOfService, _yearOfService);
+}													//constructor with date of service
+
+Service::Service(int _mileage, int _dayOfService, int _monthOfService, int _yearOfService, int _daysToNextService, int _monthsToNextService, int _yearsToNextService) : mileage(_mileage) {
+	++counter;
+	id = counter;
+	date = Date(_dayOfService, _monthOfService, _yearOfService);
+	dueDate = Date(_daysToNextService, _monthsToNextService, _yearsToNextService);
 }
 
 Service::Service() {
@@ -45,18 +52,15 @@ Date Service::getDueDate() {
 	return dueDate;
 }
 
-//std::string Service::getType() {
-//	switch (type) {
-//	case oil: {
-//		return "oil + filters";
-//	} break;
-//	case finding: {
-//		return "finding";
-//	} break;
-//	case other: {
-//		return "other";
-//	}break;
-//	default: return "unknown";
-//	}
-//}
+void Service::setDueDate(int _days, int _months, int _years) {
+	date = Date(_days, _months, _years);
+}
 
+void Service::setDueDate(Date _date) {
+	dueDate = _date;
+}
+
+void Service::setDueDateByInterval(Interval _interval) {
+	Date dueDate(_interval.getDays(), _interval.getMonths(), _interval.getYears());
+	setDueDate(dueDate);
+}

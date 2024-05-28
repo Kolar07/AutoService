@@ -17,7 +17,9 @@ private:
 
 public:
 	ServiceOil();
-	ServiceOil(int mileage_, int _day, int _month, int _year, std::string _oil, std::string _oilFilter, std::string _airFilter, std::string _cabinFilter);
+	ServiceOil(int mileage_, int _day, int _month, int _year, std::string _oil, std::string _oilFilter, std::string _airFilter, std::string _cabinFilter); //constructor with date of the service
+	ServiceOil(int _mileage, int _dayOfService, int _monthOfService, int _yearOfService, int _daysToNextService, int _monthsToNextService, int _yearsToNextService, std::string _oil, std::string _oilFilter, std::string _airFilter, std::string _cabinFilter); //constructor with date of the service and time to the next service
+
 	//std::ostream& operator<<(const std::ostream& os);
 
 	virtual void print() override;
