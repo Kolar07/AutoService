@@ -97,49 +97,73 @@ Vehicle &Vehicle::operator=(const Vehicle& obj) {
 	}
 }
 
-std::string Vehicle::get_model() {
+std::string Vehicle::getModel() {
 	return model;
 }
 
-std::string Vehicle::get_mark() {
+std::string Vehicle::getMark() {
 	return mark;
 }
 
-int Vehicle::get_year() {
+int Vehicle::getYear() {
 	return year;
 }
 
-std::string Vehicle::get_version() {
+std::string Vehicle::getVersion() {
 	return version;
 }
-std::string Vehicle::get_engine() {
+std::string Vehicle::getEngine() {
 	return engine;
 }
 
-std::string Vehicle::get_vin() const {
+std::string Vehicle::getVin() const {
 	return vin;
 }
 
-void Vehicle::set_model(std::string& _model) {
+void Vehicle::setModel(std::string& _model) {
 	model = _model;
 }
 
-void Vehicle::set_mark(std::string& _mark) {
+void Vehicle::setMark(std::string& _mark) {
 	mark = _mark;
 }
-void Vehicle::set_year(int & _year) {
+void Vehicle::setYear(int & _year) {
 	year = _year;
 }
 
-void Vehicle::set_version(std::string& _version) {
+void Vehicle::setVersion(std::string& _version) {
 	version = _version;
 }
-void Vehicle::set_engine(std::string& _engine) {
+void Vehicle::setEngine(std::string& _engine) {
 	engine = _engine;
 }
 
-void Vehicle::set_vin(std::string& _vin) {
+void Vehicle::setVin(std::string& _vin) {
 	vin = _vin;
+}
+
+void Vehicle::setIntervalOil(int _day, int _month, int _year) {
+	intervalOil = Interval(_day, _month, _year);
+}
+
+void Vehicle::setIntervalTiming(int _day, int _month, int _year) {
+	intervalTiming = Interval(_day, _month, _year);
+}
+
+void Vehicle::setIntervalOther(std::string _service, int _day, int _month, int _year) {
+	auto iterator = std::find_if(intervalOtherMap.begin(), intervalOtherMap.end(), [&_service](const std::pair<const std::string, Interval> &element){
+		return element.first == _service;
+		});
+
+	if (iterator != intervalOtherMap.end()) {
+		iterator->second.setDays(_day);
+		iterator->second.setMonths(_month);
+		iterator->second.setYears(_year);
+	}
+	else {
+		Interval newInterval(_day, _month, _year);
+		intervalOtherMap.insert(std::pair<std::string, Interval>(_service, newInterval));
+	}
 }
 
 void Vehicle::addService(std::unique_ptr<Service> service)  {

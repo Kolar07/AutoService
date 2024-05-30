@@ -36,18 +36,21 @@ public:
 	bool operator==(const Vehicle &obj) const;
 	Vehicle &operator=(const Vehicle& obj);
 
-	std::string get_mark();
-	std::string get_model();
-	int get_year();
-	std::string get_version();
-	std::string get_engine();
-	std::string get_vin() const;
-	void set_mark(std::string& _mark);
-	void set_model(std::string& _model);
-	void set_year(int & _year);
-	void set_version(std::string& _version);
-	void set_engine(std::string& _engine);
-	void set_vin(std::string& _vin);
+	std::string getMark();
+	std::string getModel();
+	int getYear();
+	std::string getVersion();
+	std::string getEngine();
+	std::string getVin() const;
+	void setMark(std::string& _mark);
+	void setModel(std::string& _model);
+	void setYear(int & _year);
+	void setVersion(std::string& _version);
+	void setEngine(std::string& _engine);
+	void setVin(std::string& _vin);
+	void setIntervalOil(int _day, int _month, int _year);
+	void setIntervalTiming(int _day, int _month, int _year);
+	void setIntervalOther(std::string service, int _day, int _month, int _year);
 
 	void addService(std::unique_ptr<Service> service);
 	void addNotification(std::unique_ptr<Notification> notification);
