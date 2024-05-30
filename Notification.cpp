@@ -43,6 +43,18 @@ bool Notification::operator!=(const Notification& obj) const {
 	return getType() != obj.getType();
 }
 
+void Notification::updateNotificationTime() {
+	time_t currentTime = time(nullptr);
+	//std::tm *local = localtime(&currentTime);
+	Date dueTime = dueTime.fromT(currentTime);
+	int between = dueTime.daysBetween(dueDate);
+	if (between >= 60) status = "green";
+	else if (between < 60 && between > 0) status = "yellow";
+	else status = "red";
+	std::cout << "Updated days to the next service: " << between << ", Status: " << status << std::endl;
+
+}
+
 //void Notification::print() const {
 //	std::cout << "Notification status: " << status << ", next service: ";
 //	dueDate.display();

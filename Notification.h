@@ -23,6 +23,7 @@ public:
 	void setDueDate(Date _dueDate);
 	virtual void print() =0;
 	virtual std::unique_ptr<Notification> clone() const = 0;
+	void updateNotificationTime();
 };
 
 
