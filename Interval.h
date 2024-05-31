@@ -22,6 +22,7 @@ public:
 	void setDays(int &_days);
 	void setMonths(int &_months);
 	void setYears(int &_years);
+	void removeInterval(); //sets attributes to 0
 };
 
 

@@ -28,7 +28,8 @@ int main() {
 	std::unique_ptr<Notification> notification4 = std::make_unique<NotificationOil>(service2->getDate(), service2->getDueDate());
 
 	//Interval interval(0, 6, 0);
-	vehicle.setIntervalOther("Naprawa klimy",0,6,0);
+	vehicle.setIntervalOther(service1->getID(), 0, 6, 0);
+	vehicle.removeIntervalOther(service1->getID());
 
 	notification3->updateNotificationTime();
 

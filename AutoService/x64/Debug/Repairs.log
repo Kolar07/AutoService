@@ -1,16 +1,2 @@
-﻿  Date.cpp
-  Interval.cpp
-  MainView.cpp
-  Notification.cpp
-  main.cpp
-  NotificationOil.cpp
-  NotificationOther.cpp
-  NotificationTiming.cpp
-  Service.cpp
-  ServiceOil.cpp
-  ServiceOther.cpp
-  ServiceTiming.cpp
-  Vehicle.cpp
-  VehicleContainer.cpp
-  Generating Code...
+﻿  Interval.cpp
   Repairs.vcxproj -> C:\Users\jakub\OneDrive\Pulpit\Programming\AutoService\x64\Debug\AutoService.exe
