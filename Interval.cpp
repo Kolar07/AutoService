@@ -3,7 +3,7 @@
 Interval::Interval(int _days, int _months, int _years) :days(_days), months(_months), years(_years) {}
 Interval::Interval() {}
 bool Interval::operator==(const Interval &obj) {
-	return (days == obj.days, months == obj.months, years == obj.years);
+	return days == obj.days && months == obj.months && years == obj.years;
 }
 
 Interval& Interval::operator=(const Interval& obj) {
@@ -40,4 +40,10 @@ void Interval::setMonths(int& _months) {
 
 void Interval::setYears(int& _years) {
 	years = _years;
+}
+
+void Interval::removeInterval() {
+	days = 0;
+	months = 0;
+	years = 0;
 }

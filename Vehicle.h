@@ -21,7 +21,7 @@ private:
 	int intervalTiming_km;
 	Interval intervalOil;
 	Interval intervalTiming;
-	std::map<std::string, Interval> intervalOtherMap;
+	std::map<int, Interval> intervalOtherMap;
 	std::vector<std::unique_ptr<Service>> services;
 	std::vector<std::unique_ptr<Notification>> notifications;
 
@@ -36,11 +36,11 @@ public:
 	bool operator==(const Vehicle &obj) const;
 	Vehicle &operator=(const Vehicle& obj);
 
-	std::string getMark();
-	std::string getModel();
-	int getYear();
-	std::string getVersion();
-	std::string getEngine();
+	std::string getMark() const;
+	std::string getModel() const;
+	int getYear() const;
+	std::string getVersion() const;
+	std::string getEngine() const;
 	std::string getVin() const;
 	void setMark(std::string& _mark);
 	void setModel(std::string& _model);
@@ -48,14 +48,21 @@ public:
 	void setVersion(std::string& _version);
 	void setEngine(std::string& _engine);
 	void setVin(std::string& _vin);
+
+	void setIntervalOil_km(int _oilKm);
+	void setIntervalTiming_km(int _timingKm);
 	void setIntervalOil(int _day, int _month, int _year);
 	void setIntervalTiming(int _day, int _month, int _year);
-	void setIntervalOther(std::string service, int _day, int _month, int _year);
+	void setIntervalOther(int _id, int _day, int _month, int _year);
 
 	void addService(std::unique_ptr<Service> service);
 	void addNotification(std::unique_ptr<Notification> notification);
 	void removeService(int _id);
 	void removeNotification(std::string _type);
+	void removeIntervalOther(int _id);
+	void removeIntervalOil();
+	void removeIntervalTiming();
+
 };
 
 #endif

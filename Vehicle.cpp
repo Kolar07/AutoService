@@ -97,22 +97,22 @@ Vehicle &Vehicle::operator=(const Vehicle& obj) {
 	}
 }
 
-std::string Vehicle::getModel() {
+std::string Vehicle::getModel() const {
 	return model;
 }
 
-std::string Vehicle::getMark() {
+std::string Vehicle::getMark() const {
 	return mark;
 }
 
-int Vehicle::getYear() {
+int Vehicle::getYear() const {
 	return year;
 }
 
-std::string Vehicle::getVersion() {
+std::string Vehicle::getVersion() const {
 	return version;
 }
-std::string Vehicle::getEngine() {
+std::string Vehicle::getEngine() const {
 	return engine;
 }
 
@@ -142,6 +142,14 @@ void Vehicle::setVin(std::string& _vin) {
 	vin = _vin;
 }
 
+void Vehicle::setIntervalOil_km(int _oilKm) {
+	intervalOil_km = _oilKm;
+}
+
+void Vehicle::setIntervalTiming_km(int _timingKm) {
+	intervalTiming_km = _timingKm;
+}
+
 void Vehicle::setIntervalOil(int _day, int _month, int _year) {
 	intervalOil = Interval(_day, _month, _year);
 }
@@ -150,9 +158,9 @@ void Vehicle::setIntervalTiming(int _day, int _month, int _year) {
 	intervalTiming = Interval(_day, _month, _year);
 }
 
-void Vehicle::setIntervalOther(std::string _service, int _day, int _month, int _year) {
-	auto iterator = std::find_if(intervalOtherMap.begin(), intervalOtherMap.end(), [&_service](const std::pair<const std::string, Interval> &element){
-		return element.first == _service;
+void Vehicle::setIntervalOther(int _id, int _day, int _month, int _year) {
+	auto iterator = std::find_if(intervalOtherMap.begin(), intervalOtherMap.end(), [&_id](const std::pair<const int, Interval> &element){
+		return element.first == _id;
 		});
 
 	if (iterator != intervalOtherMap.end()) {
@@ -162,7 +170,7 @@ void Vehicle::setIntervalOther(std::string _service, int _day, int _month, int _
 	}
 	else {
 		Interval newInterval(_day, _month, _year);
-		intervalOtherMap.insert(std::pair<std::string, Interval>(_service, newInterval));
+		intervalOtherMap.insert(std::pair<int, Interval>(_id, newInterval));
 	}
 }
 
@@ -190,5 +198,22 @@ void Vehicle::removeService(int _id) {
 		});
 	if (it != services.end()) {
 		services.erase(it);
+	}
+}
+
+void Vehicle::removeIntervalOil() {
+	intervalOil.removeInterval();
+}
+
+void Vehicle::removeIntervalTiming() {
+	intervalTiming.removeInterval();
+}
+
+void Vehicle::removeIntervalOther(int _id) {
+	auto it = std::find_if(intervalOtherMap.begin(), intervalOtherMap.end(), [&_id](const std::pair<int, Interval> &element) {
+		return element.first == _id;
+		});
+	if (it != intervalOtherMap.end()) {
+		intervalOtherMap.erase(it);
 	}
 }
