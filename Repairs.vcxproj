@@ -156,6 +156,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="Date.cpp" />
     <ClCompile Include="Interval.cpp" />
     <ClCompile Include="MainView.cpp" />
@@ -170,8 +171,10 @@
     <ClCompile Include="ServiceTiming.cpp" />
     <ClCompile Include="Vehicle.cpp" />
     <ClCompile Include="VehicleContainer.cpp" />
+    <ClCompile Include="VehicleVIsualisation.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Button.h" />
     <ClInclude Include="Date.h" />
     <ClInclude Include="Interval.h" />
     <ClInclude Include="MainView.h" />
@@ -184,8 +187,11 @@
     <ClInclude Include="ServiceOil.h" />
     <ClInclude Include="ServiceOther.h" />
     <ClInclude Include="ServiceTiming.h" />
+    <ClInclude Include="ServiceVisualisation.h" />
+    <ClInclude Include="Textbox.h" />
     <ClInclude Include="Vehicle.h" />
     <ClInclude Include="VehicleContainer.h" />
+    <ClInclude Include="VehicleVisualisation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
