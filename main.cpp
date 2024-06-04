@@ -13,43 +13,47 @@
 #include "Vehicle.h"
 #include "VehicleContainer.h"
 
+
 int main() {
 
-	Vehicle vehicle("asdasd","asdasd",2001,"sdad","asdad","VIN");
-	Date date1(10,10,2020);
-	Date date2(12, 12, 2023);
-	//std::unique_ptr<Notification> notification1 = std::make_unique<NotificationOil>("green",date1);
-	//std::unique_ptr<Notification> notification2 = std::make_unique<NotificationTiming>("red",date2);
-	
-	std::unique_ptr<Service> service1 = std::make_unique<ServiceTiming>(15616, 10,4,2024,0,3,0,"cdsc");
-	std::unique_ptr<Service> service2 = std::make_unique<ServiceOil>(1561,3,6,2024, 0, 0, 0,"sdczdc","cdvzvd","dsfsdf","fdescd");
+	MainView mainview;
+	mainview.loop();
 
-	std::unique_ptr<Notification> notification3 = std::make_unique<NotificationTiming>(service1->getDate(), service1->getDueDate());
-	std::unique_ptr<Notification> notification4 = std::make_unique<NotificationOil>(service2->getDate(), service2->getDueDate());
+	//Vehicle vehicle("asdasd","asdasd",2001,"sdad","asdad","VIN");
+	//Date date1(10,10,2020);
+	//Date date2(12, 12, 2023);
+	////std::unique_ptr<Notification> notification1 = std::make_unique<NotificationOil>("green",date1);
+	////std::unique_ptr<Notification> notification2 = std::make_unique<NotificationTiming>("red",date2);
+	//
+	//std::unique_ptr<Service> service1 = std::make_unique<ServiceTiming>(15616, 10,4,2024,0,3,0,"cdsc");
+	//std::unique_ptr<Service> service2 = std::make_unique<ServiceOil>(1561,3,6,2024, 0, 0, 0,"sdczdc","cdvzvd","dsfsdf","fdescd");
 
-	//Interval interval(0, 6, 0);
-	vehicle.setIntervalOther(service1->getID(), 0, 6, 0);
-	vehicle.removeIntervalOther(service1->getID());
+	//std::unique_ptr<Notification> notification3 = std::make_unique<NotificationTiming>(service1->getDate(), service1->getDueDate());
+	//std::unique_ptr<Notification> notification4 = std::make_unique<NotificationOil>(service2->getDate(), service2->getDueDate());
 
-	notification3->updateNotificationTime();
+	////Interval interval(0, 6, 0);
+	//vehicle.setIntervalOther(service1->getID(), 0, 6, 0);
+	//vehicle.removeIntervalOther(service1->getID());
 
-	VehicleContainer container;
+	//notification3->updateNotificationTime();
 
-	//vehicle.addNotification(std::move(notification1));
-	//vehicle.addNotification(std::move(notification2));
-	vehicle.addService(std::move(service1));
-	vehicle.addService(std::move(service2));
+	//VehicleContainer container;
 
-	container.addVehicle(vehicle);
-	container.findVehicleByVin("VIN");
-	container.removeVehicle("VIN");
-	//vehicle.removeNotification("Oil");
-	//vehicle.removeNotification("Timing");
-	//vehicle.removeService(1);
-	//vehicle.removeService(2);
+	////vehicle.addNotification(std::move(notification1));
+	////vehicle.addNotification(std::move(notification2));
+	//vehicle.addService(std::move(service1));
+	//vehicle.addService(std::move(service2));
+
+	//container.addVehicle(vehicle);
+	//container.findVehicleByVin("VIN");
+	//container.removeVehicle("VIN");
+	////vehicle.removeNotification("Oil");
+	////vehicle.removeNotification("Timing");
+	////vehicle.removeService(1);
+	////vehicle.removeService(2);
 
 
-	std::unique_ptr<Service> serv = std::make_unique<ServiceTiming>();
+	//std::unique_ptr<Service> serv = std::make_unique<ServiceTiming>();
 
 }
 
