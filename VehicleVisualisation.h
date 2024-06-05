@@ -10,20 +10,13 @@ private:
 	sf::RectangleShape background;
 	sf::Text mark;
 	sf::Text model;
-	sf::Text version;
 	sf::Text vin;
 	sf::Text year;
-	/*sf::Text intervalOil_km;
-	sf::Text intervalTiming_km;
-	sf::Text intervalOil;
-	sf::Text intervalTiming;
-	sf::Text year;*/
-	//std::map<int, sf::Text> intervalOtherMap;
-	virtual void draw(sf::RenderTarget& _target, sf::RenderStates _states) const override;
+	
 public:
 	//VehicleVisualisation();
 	VehicleVisualisation(const Vehicle &_vehicle, sf::Font &_font);
-
+	virtual void draw(sf::RenderTarget& _target, sf::RenderStates _states) const override;
 	void setPosition(float x, float y);
 
 

@@ -165,6 +165,8 @@
     <ClCompile Include="NotificationOil.cpp" />
     <ClCompile Include="NotificationOther.cpp" />
     <ClCompile Include="NotificationTiming.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="ScrollableList.cpp" />
     <ClCompile Include="Service.cpp" />
     <ClCompile Include="ServiceOil.cpp" />
     <ClCompile Include="ServiceOther.cpp" />
@@ -183,6 +185,8 @@
     <ClInclude Include="NotificationOther.h" />
     <ClInclude Include="NotificationTiming.h" />
     <ClInclude Include="NotificationVisualisation.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="ScrollableList.h" />
     <ClInclude Include="Service.h" />
     <ClInclude Include="ServiceOil.h" />
     <ClInclude Include="ServiceOther.h" />

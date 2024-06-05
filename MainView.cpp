@@ -3,8 +3,9 @@
 #include "Vehicle.h"
 
 void MainView::loop() {
-    sf::RenderWindow window(sf::VideoMode(1280, 720), "AutoService");
-    Vehicle vehicle("asdasd", "asdasd", 2001, "sdad", "asdad", "VIN");
+    sf::RenderWindow window(sf::VideoMode(1600, 800), "AutoService");
+    
+    Vehicle vehicle("asdasdfsdfsdfssd", "asdasd", 2001, "sdad", "asdad", "VIN");
     sf::Font font;
     font.loadFromFile("Montserrat-Bold.ttf");
     VehicleVisualisation visu(vehicle,font);
@@ -17,7 +18,7 @@ void MainView::loop() {
                 window.close();
         }
 
-        window.clear();
+        window.clear(sf::Color::White);
         window.draw(visu);
         window.display();
         
