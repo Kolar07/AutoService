@@ -1,2 +1,13 @@
 ﻿  ScrollableList.cpp
+C:\Users\jakub\OneDrive\Pulpit\Programming\AutoService\ScrollableList.cpp(11,92): warning C4244: 'argument': conversion from 'const int' to 'T', possible loss of data
+C:\Users\jakub\OneDrive\Pulpit\Programming\AutoService\ScrollableList.cpp(11,92): warning C4244:         with
+C:\Users\jakub\OneDrive\Pulpit\Programming\AutoService\ScrollableList.cpp(11,92): warning C4244:         [
+C:\Users\jakub\OneDrive\Pulpit\Programming\AutoService\ScrollableList.cpp(11,92): warning C4244:             T=float
+C:\Users\jakub\OneDrive\Pulpit\Programming\AutoService\ScrollableList.cpp(11,92): warning C4244:         ]
+C:\Users\jakub\OneDrive\Pulpit\Programming\AutoService\ScrollableList.cpp(11,71): warning C4244: 'argument': conversion from 'const int' to 'T', possible loss of data
+C:\Users\jakub\OneDrive\Pulpit\Programming\AutoService\ScrollableList.cpp(11,71): warning C4244:         with
+C:\Users\jakub\OneDrive\Pulpit\Programming\AutoService\ScrollableList.cpp(11,71): warning C4244:         [
+C:\Users\jakub\OneDrive\Pulpit\Programming\AutoService\ScrollableList.cpp(11,71): warning C4244:             T=float
+C:\Users\jakub\OneDrive\Pulpit\Programming\AutoService\ScrollableList.cpp(11,71): warning C4244:         ]
+C:\Users\jakub\OneDrive\Pulpit\Programming\AutoService\ScrollableList.cpp(44,39): warning C4244: 'argument': conversion from 'size_t' to 'float', possible loss of data
   Repairs.vcxproj -> C:\Users\jakub\OneDrive\Pulpit\Programming\AutoService\x64\Debug\AutoService.exe
