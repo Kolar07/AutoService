@@ -4,7 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include "Vehicle.h"
 
-class VehicleVisualisation : public sf::Drawable {
+class VehicleVisualisation {
 private:
 	const Vehicle& vehicle;
 	sf::RectangleShape background;
@@ -16,7 +16,8 @@ private:
 public:
 	//VehicleVisualisation();
 	VehicleVisualisation(const Vehicle &_vehicle, sf::Font &_font);
-	virtual void draw(sf::RenderTarget& _target, sf::RenderStates _states) const override;
+	//VehicleVisualisation(std::string _mark, std::string _model, std::string _vin, int _year, sf::Font &_font);
+	void draw(sf::RenderWindow &_window) const;
 	void setPosition(float x, float y);
 
 
