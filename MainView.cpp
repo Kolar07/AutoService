@@ -7,7 +7,7 @@
 void MainView::loop() {
     sf::RenderWindow window(sf::VideoMode(1600, 800), "AutoService");
     
-    Vehicle vehicle1("asdasdfsdfsdfssd", "asdasd", 2001, "sdad", "asdad", "VIN1");
+    Vehicle vehicle1("asdasdfsdfsdfssdfgdfgdgfdgfdfgdfgdfgdfgdfgdfgd", "asdasd", 2001, "sdad", "asdad", "VIN1");
     Vehicle vehicle2("asdasdfsdfsdfssd", "asdasd", 2001, "sdad", "asdad", "VIN2");
     Vehicle vehicle3("asdasdfsdfsdfssd", "asdasd", 2001, "sdad", "asdad", "VIN3");
     Vehicle vehicle4("asdasdfsdfsdfssd", "asdasd", 2001, "sdad", "asdad", "VIN4");
@@ -35,7 +35,10 @@ void MainView::loop() {
     container.push_back(visu7);
     container.push_back(visu8);
     container.push_back(visu9);
-    ScrollableList list(100, 150, 1000, ITEM_HEIGHT * VISIBLE_ITEMS, container);
+    container.push_back(visu7);
+    container.push_back(visu8);
+    container.push_back(visu9);
+    ScrollableList list(100, 150, 1000, 600, container, font);
 
     while (window.isOpen()) {
         sf::Event event;

@@ -6,19 +6,47 @@ void VehicleVisualisation::draw(sf::RenderWindow &_window) const {
     _window.draw(model);
     _window.draw(vin);
     _window.draw(year);
+    moreInfo.drawButton(_window);
 }
 
-VehicleVisualisation::VehicleVisualisation(const Vehicle& _vehicle, sf::Font &_font) :vehicle(_vehicle){
+std::string VehicleVisualisation::wrapText(const std::string & text, float maxWidth, const sf::Font & font, unsigned int charSize) {
+    std::string wrapped;
+    std::string line;
+    float width = 0.0f;
+    float maxHeight = 0.0f;
+    for (char c : text) {
+        line += c;
+        sf::Text temp(line, font, charSize);
+        sf::FloatRect bounds = temp.getLocalBounds();
+        if (bounds.width > maxWidth) {
+            wrapped += '\n';
+            line = std::string(1, c);
+            maxHeight = std::max(maxHeight, bounds.height);
+            if (maxHeight > background.getSize().y) {
+                float newY = maxHeight + 50;
+                float X = background.getSize().x;
+                background.setSize(sf::Vector2f(X, newY));
+                //background.setPosition(background.getPosition().x, background.getPosition().y - 50);
+            }
+        }
+        wrapped += c;
+    }
+    return wrapped;
+}
+
+VehicleVisualisation::VehicleVisualisation(const Vehicle& _vehicle, sf::Font& _font) :vehicle(_vehicle) {
     //VehicleVisualisation::VehicleVisualisation(std::string _mark, std::string _model, std::string _vin, int _year, sf::Font &_font)
-        
+
     background.setSize(sf::Vector2f(1000, 100));
     background.setFillColor(sf::Color(50, 50, 50));
+    background.setOutlineThickness(2);
+    background.setOutlineColor(sf::Color::Black);
 
     mark.setFont(_font);
     mark.setCharacterSize(20);
     mark.setFillColor(sf::Color::Black);
-    mark.setPosition(50,50);
-    mark.setString(_vehicle.getMark());
+    mark.setPosition(50, 50);
+    mark.setString(wrapText(_vehicle.getMark(),50,_font,20));
 
     model.setFont(_font);
     model.setCharacterSize(20);
@@ -37,12 +65,21 @@ VehicleVisualisation::VehicleVisualisation(const Vehicle& _vehicle, sf::Font &_f
     year.setFillColor(sf::Color::Black);
     year.setPosition(50, 50);
     year.setString(std::to_string(_vehicle.getYear()));
+
+    moreInfo = Button("more info", {70, 20}, 10, sf::Color::Black, sf::Color::White);
+    moreInfo.setFont(_font);
+
 }
 
 void VehicleVisualisation::setPosition(float x, float y) {
     background.setPosition(x, y);
-    mark.setPosition(x + 10, y + 10);
-    model.setPosition(x + 200, y + 10);
-    vin.setPosition(x + 600, y + 10);
-    year.setPosition(x + 700, y + 10);
+    vin.setPosition(x + 10, y + 10);
+    mark.setPosition(x + 200, y + 10);
+    model.setPosition(x + 400, y + 10);
+    year.setPosition(x + 800, y + 10);
+    moreInfo.setPosition({ x + 900,y + 15 });
+}
+
+float VehicleVisualisation::getBackgroundHeight() const{
+    return background.getSize().y;
 }

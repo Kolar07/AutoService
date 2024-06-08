@@ -1,5 +1,14 @@
 #include "Button.h"
 
+Button::Button(std::string t, sf::Vector2f size, int charSize, sf::Color bgcolor, sf::Color textcolor) {
+	text.setString(t);
+	text.setFillColor(textcolor);
+	text.setCharacterSize(charSize);
+
+	button.setSize(size);
+	button.setFillColor(bgcolor);
+}
+
 void Button::setFont(sf::Font& font) {
 	text.setFont(font);
 }
@@ -46,7 +55,7 @@ bool Button::isMouseOver(sf::RenderWindow& window) {
 sf::Text Button::returnText() {
 	return text;
 }
-
+//jkghl
 sf::RectangleShape Button::returnRectangle() {
 	return button;
 }
