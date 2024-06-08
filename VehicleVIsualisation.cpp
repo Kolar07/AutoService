@@ -6,6 +6,7 @@ void VehicleVisualisation::draw(sf::RenderWindow &_window) const {
     _window.draw(model);
     _window.draw(vin);
     _window.draw(year);
+<<<<<<< HEAD
     moreInfo.drawButton(_window);
 }
 
@@ -37,6 +38,13 @@ std::string VehicleVisualisation::wrapText(const std::string & text, float maxWi
 VehicleVisualisation::VehicleVisualisation(const Vehicle& _vehicle, sf::Font& _font) :vehicle(_vehicle) {
     //VehicleVisualisation::VehicleVisualisation(std::string _mark, std::string _model, std::string _vin, int _year, sf::Font &_font)
 
+=======
+}
+
+VehicleVisualisation::VehicleVisualisation(const Vehicle& _vehicle, sf::Font &_font) :vehicle(_vehicle){
+    //VehicleVisualisation::VehicleVisualisation(std::string _mark, std::string _model, std::string _vin, int _year, sf::Font &_font)
+        
+>>>>>>> 860e36b8944ce6989e9f71236918a08b6576ca65
     background.setSize(sf::Vector2f(1000, 100));
     background.setFillColor(sf::Color(50, 50, 50));
     background.setOutlineThickness(2);
@@ -45,8 +53,13 @@ VehicleVisualisation::VehicleVisualisation(const Vehicle& _vehicle, sf::Font& _f
     mark.setFont(_font);
     mark.setCharacterSize(20);
     mark.setFillColor(sf::Color::Black);
+<<<<<<< HEAD
     mark.setPosition(50, 50);
     mark.setString(wrapText(_vehicle.getMark(),50,_font,20));
+=======
+    mark.setPosition(50,50);
+    mark.setString(_vehicle.getMark());
+>>>>>>> 860e36b8944ce6989e9f71236918a08b6576ca65
 
     model.setFont(_font);
     model.setCharacterSize(20);
@@ -73,6 +86,7 @@ VehicleVisualisation::VehicleVisualisation(const Vehicle& _vehicle, sf::Font& _f
 
 void VehicleVisualisation::setPosition(float x, float y) {
     background.setPosition(x, y);
+<<<<<<< HEAD
     vin.setPosition(x + 10, y + 10);
     mark.setPosition(x + 200, y + 10);
     model.setPosition(x + 400, y + 10);
@@ -82,4 +96,10 @@ void VehicleVisualisation::setPosition(float x, float y) {
 
 float VehicleVisualisation::getBackgroundHeight() const{
     return background.getSize().y;
+=======
+    mark.setPosition(x + 10, y + 10);
+    model.setPosition(x + 200, y + 10);
+    vin.setPosition(x + 600, y + 10);
+    year.setPosition(x + 700, y + 10);
+>>>>>>> 860e36b8944ce6989e9f71236918a08b6576ca65
 }

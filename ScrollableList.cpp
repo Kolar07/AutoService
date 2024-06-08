@@ -2,7 +2,11 @@
 
 void ScrollableList::handleEvent(const sf::Event& event) {
     if (event.type == sf::Event::MouseWheelScrolled) {
+<<<<<<< HEAD
         scrollAmount -= event.mouseWheelScroll.delta * 50;
+=======
+        scrollAmount -= event.mouseWheelScroll.delta * ITEM_HEIGHT;
+>>>>>>> 860e36b8944ce6989e9f71236918a08b6576ca65
         scrollAmount = std::clamp(scrollAmount, 0.0f, maxScroll);
         updateScrollbar();
     }
@@ -39,20 +43,30 @@ void ScrollableList::update() {
 void ScrollableList::draw(sf::RenderWindow& window) {
     window.setView(view);
 
+<<<<<<< HEAD
     float currentY = 0;
     for (size_t i = 0; i < listItems.size(); ++i) {
         listItems[i].setPosition(0, currentY);
         listItems[i].draw(window);
         currentY += listItems[i].getBackgroundHeight();
+=======
+    for (size_t i = 0; i < listItems.size(); ++i) {
+        // Positioning each item according to scrollAmount
+        listItems[i].setPosition(0, 0 + i * ITEM_HEIGHT);
+        listItems[i].draw(window);
+>>>>>>> 860e36b8944ce6989e9f71236918a08b6576ca65
     }
 
     window.setView(window.getDefaultView());
     window.draw(scrollbar);
+<<<<<<< HEAD
     window.draw(headers);
 
     for (const auto& label : labels) {
         window.draw(label);
     }
+=======
+>>>>>>> 860e36b8944ce6989e9f71236918a08b6576ca65
 }
 
 void ScrollableList::updateScrollbar() {
@@ -61,6 +75,7 @@ void ScrollableList::updateScrollbar() {
     scrollbar.setPosition(scrollbar.getPosition().x, scrollBarPosition);
 }
 
+<<<<<<< HEAD
 ScrollableList::ScrollableList(float x, float y, float width, float height, const std::vector<VehicleVisualisation> &items, sf::Font &font)
     : position(x, y), size(width, height), view(sf::FloatRect(x, y, width, height)),
     isDragging(false), scrollBarPosition(y),listItems(items) {
@@ -123,4 +138,17 @@ void ScrollableList::setLabels(float x,float y, sf::Font &font) {
     label4.setString("VIN");
     labels.push_back(label4);
 
+=======
+ScrollableList::ScrollableList(float x, float y, float width, float height, const std::vector<VehicleVisualisation> &items)
+    : position(x, y), size(width, height), view(sf::FloatRect(x, y, width, height)),
+    isDragging(false), scrollBarPosition(y), scrollBarHeight(height* (height / (ITEM_HEIGHT * items.size()))),
+    listItems(items) {
+
+    scrollAmount = 0;
+    maxScroll = std::max(0.0f, ITEM_HEIGHT * items.size() - height);
+
+    scrollbar.setSize(sf::Vector2f(SCROLLBAR_WIDTH, scrollBarHeight));
+    scrollbar.setPosition(x + width - SCROLLBAR_WIDTH, scrollBarPosition);
+    scrollbar.setFillColor(sf::Color(200, 200, 200));
+>>>>>>> 860e36b8944ce6989e9f71236918a08b6576ca65
 }

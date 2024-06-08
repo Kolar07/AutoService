@@ -9,6 +9,11 @@
 
 const int WINDOW_WIDTH = 1600;
 const int WINDOW_HEIGHT = 800;
+<<<<<<< HEAD
+=======
+const int ITEM_HEIGHT = 100;
+const int VISIBLE_ITEMS = 6;
+>>>>>>> 860e36b8944ce6989e9f71236918a08b6576ca65
 const int SCROLLBAR_WIDTH = 20;
 
 class ScrollableList {
@@ -32,11 +37,18 @@ private:
     void updateScrollbar();
 
 public:
+<<<<<<< HEAD
     ScrollableList(float x, float y, float width, float height, const std::vector<VehicleVisualisation> &items, sf::Font &font);
     void handleEvent(const sf::Event& event);
     void update();
     void draw(sf::RenderWindow& window);
     void setLabels(float x, float y,sf::Font &font);
+=======
+    ScrollableList(float x, float y, float width, float height, const std::vector<VehicleVisualisation> &items);
+    void handleEvent(const sf::Event& event);
+    void update();
+    void draw(sf::RenderWindow& window);
+>>>>>>> 860e36b8944ce6989e9f71236918a08b6576ca65
 };
 
 #endif
