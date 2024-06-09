@@ -1,4 +1,5 @@
 *.ipch
 *.log
+.vs/
 x64/
 AutoService/

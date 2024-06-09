@@ -96,7 +96,7 @@ void ScrollableList::setLabels(float x, float y, sf::Font& font) {
 
     label2.setFont(font);
     label2.setCharacterSize(20);
-    label2.setPosition(x + 200, y - 25);
+    label2.setPosition(x + 250, y - 25);
     label2.setFillColor(sf::Color::Black);
     label2.setString("Mark");
     labels.push_back(label2);
@@ -105,7 +105,7 @@ void ScrollableList::setLabels(float x, float y, sf::Font& font) {
 
     label3.setFont(font);
     label3.setCharacterSize(20);
-    label3.setPosition(x + 400, y - 25);
+    label3.setPosition(x + 500, y - 25);
     label3.setFillColor(sf::Color::Black);
     label3.setString("Model");
     labels.push_back(label3);
@@ -116,6 +116,6 @@ void ScrollableList::setLabels(float x, float y, sf::Font& font) {
     label4.setCharacterSize(20);
     label4.setPosition(x + 800, y - 25);
     label4.setFillColor(sf::Color::Black);
-    label4.setString("VIN");
+    label4.setString("Year");
     labels.push_back(label4);
 }

@@ -7,12 +7,12 @@
 void MainView::loop() {
     sf::RenderWindow window(sf::VideoMode(1600, 800), "AutoService");
     
-    Vehicle vehicle1("asdasdfsdfsdfssdfgdfgdgfdgfdfgdfgdfgdfgdfgdfgd", "asdasd", 2001, "sdad", "asdad", "VIN1");
-    Vehicle vehicle2("asdasdfsdfsdfssd", "asdasd", 2001, "sdad", "asdad", "VIN2");
-    Vehicle vehicle3("asdasdfsdfsdfssd", "asdasd", 2001, "sdad", "asdad", "VIN3");
-    Vehicle vehicle4("asdasdfsdfsdfssd", "asdasd", 2001, "sdad", "asdad", "VIN4");
-    Vehicle vehicle5("asdasdfsdfsdfssd", "asdasd", 2001, "sdad", "asdad", "VIN5");
-    Vehicle vehicle6("asdasdfsdfsdfssd", "asdasd", 2001, "sdad", "asdad", "VIN6");
+    Vehicle vehicle1("asdasdfsdfsdfssdfgdfgdgfdgfdfgdfgdfgdfgdfgdfgd", "asdasd", 2001, "sdad", "asdad", "seventeencharacte");
+    Vehicle vehicle2("asdasdfsdfsdfssd", "asdasd", 2001, "sdad", "asdad", "seventeencharacte");
+    Vehicle vehicle3("asdasdfsdfsdfssd", "asdasd", 2001, "sdad", "asdad", "seventeencharacte");
+    Vehicle vehicle4("asdasdfsdfsdfssd", "asdasd", 2001, "sdad", "asdad", "seventeencharacte");
+    Vehicle vehicle5("asdasdfsdfsdfssd", "asdasd", 2001, "sdad", "asdad", "seventeencharacte");
+    Vehicle vehicle6("asdasdfsdfsdfssd", "asdasd", 2001, "sdad", "asdad", "seventeencharacte");
     sf::Font font;
     font.loadFromFile("Montserrat-Bold.ttf");
     VehicleVisualisation visu1(vehicle1, font);
